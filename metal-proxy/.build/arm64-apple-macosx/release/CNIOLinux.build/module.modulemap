@@ -1,0 +1,4 @@
+module CNIOLinux {
+    umbrella header "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/CNIOLinux/include/CNIOLinux.h"
+    export *
+}

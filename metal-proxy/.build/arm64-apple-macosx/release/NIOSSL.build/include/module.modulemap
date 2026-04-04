@@ -1,0 +1,3 @@
+module NIOSSL {
+    header "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOSSL.build/include/NIOSSL-Swift.h"
+}

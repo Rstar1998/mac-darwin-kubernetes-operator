@@ -1,0 +1,343 @@
+{
+  "": {
+    "dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/NIOPosix.d",
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/NIOPosix.o",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/primary.swiftdeps"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/BSDSocketAPICommon.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BSDSocketAPICommon.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BSDSocketAPICommon~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BSDSocketAPICommon.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BSDSocketAPICommon.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/BSDSocketAPIPosix.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BSDSocketAPIPosix.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BSDSocketAPIPosix~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BSDSocketAPIPosix.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BSDSocketAPIPosix.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/BSDSocketAPIWindows.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BSDSocketAPIWindows.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BSDSocketAPIWindows~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BSDSocketAPIWindows.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BSDSocketAPIWindows.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/BaseSocket.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseSocket.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseSocket~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseSocket.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseSocket.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/BaseSocketChannel+AccessibleTransport.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseSocketChannel+AccessibleTransport.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseSocketChannel+AccessibleTransport~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseSocketChannel+AccessibleTransport.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseSocketChannel+AccessibleTransport.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/BaseSocketChannel+SocketOptionProvider.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseSocketChannel+SocketOptionProvider.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseSocketChannel+SocketOptionProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseSocketChannel+SocketOptionProvider.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseSocketChannel+SocketOptionProvider.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/BaseSocketChannel.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseSocketChannel.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseSocketChannel~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseSocketChannel.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseSocketChannel.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/BaseStreamSocketChannel.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseStreamSocketChannel.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseStreamSocketChannel~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseStreamSocketChannel.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/BaseStreamSocketChannel.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/Bootstrap.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Bootstrap.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Bootstrap~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Bootstrap.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Bootstrap.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/ControlMessage.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/ControlMessage.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/ControlMessage~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/ControlMessage.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/ControlMessage.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/DatagramVectorReadManager.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/DatagramVectorReadManager.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/DatagramVectorReadManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/DatagramVectorReadManager.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/DatagramVectorReadManager.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/Errors+Any.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Errors+Any.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Errors+Any~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Errors+Any.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Errors+Any.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/FileDescriptor.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/FileDescriptor.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/FileDescriptor~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/FileDescriptor.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/FileDescriptor.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/GetaddrinfoResolver.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/GetaddrinfoResolver.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/GetaddrinfoResolver~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/GetaddrinfoResolver.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/GetaddrinfoResolver.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/HappyEyeballs.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/HappyEyeballs.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/HappyEyeballs~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/HappyEyeballs.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/HappyEyeballs.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/IO.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/IO.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/IO~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/IO.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/IO.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/IntegerBitPacking.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/IntegerBitPacking.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/IntegerBitPacking~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/IntegerBitPacking.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/IntegerBitPacking.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/IntegerTypes.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/IntegerTypes.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/IntegerTypes~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/IntegerTypes.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/IntegerTypes.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/Linux.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Linux.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Linux~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Linux.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Linux.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/LinuxCPUSet.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/LinuxCPUSet.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/LinuxCPUSet~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/LinuxCPUSet.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/LinuxCPUSet.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/LinuxUring.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/LinuxUring.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/LinuxUring~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/LinuxUring.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/LinuxUring.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/MultiThreadedEventLoopGroup.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/MultiThreadedEventLoopGroup.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/MultiThreadedEventLoopGroup~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/MultiThreadedEventLoopGroup.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/MultiThreadedEventLoopGroup.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/NIOPosixSendableMetatype.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/NIOPosixSendableMetatype.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/NIOPosixSendableMetatype~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/NIOPosixSendableMetatype.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/NIOPosixSendableMetatype.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/NIOThreadPool.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/NIOThreadPool.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/NIOThreadPool~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/NIOThreadPool.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/NIOThreadPool.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/NonBlockingFileIO.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/NonBlockingFileIO.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/NonBlockingFileIO~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/NonBlockingFileIO.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/NonBlockingFileIO.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/PendingDatagramWritesManager.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PendingDatagramWritesManager.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PendingDatagramWritesManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PendingDatagramWritesManager.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PendingDatagramWritesManager.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/PendingWritesManager.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PendingWritesManager.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PendingWritesManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PendingWritesManager.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PendingWritesManager.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/PipeChannel.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PipeChannel.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PipeChannel~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PipeChannel.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PipeChannel.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/PipePair.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PipePair.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PipePair~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PipePair.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PipePair.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/Pool.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Pool.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Pool~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Pool.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Pool.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/PosixSingletons+ConcurrencyTakeOver.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PosixSingletons+ConcurrencyTakeOver.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PosixSingletons+ConcurrencyTakeOver~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PosixSingletons+ConcurrencyTakeOver.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PosixSingletons+ConcurrencyTakeOver.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/PosixSingletons.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PosixSingletons.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PosixSingletons~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PosixSingletons.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/PosixSingletons.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/RawSocketBootstrap.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/RawSocketBootstrap.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/RawSocketBootstrap~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/RawSocketBootstrap.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/RawSocketBootstrap.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/Resolver.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Resolver.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Resolver~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Resolver.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Resolver.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/Selectable.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Selectable.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Selectable~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Selectable.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Selectable.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/SelectableChannel.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectableChannel.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectableChannel~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectableChannel.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectableChannel.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/SelectableEventLoop.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectableEventLoop.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectableEventLoop~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectableEventLoop.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectableEventLoop.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/SelectorEpoll.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorEpoll.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorEpoll~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorEpoll.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorEpoll.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/SelectorGeneric.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorGeneric.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorGeneric~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorGeneric.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorGeneric.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/SelectorKqueue.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorKqueue.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorKqueue~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorKqueue.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorKqueue.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/SelectorUring.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorUring.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorUring~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorUring.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorUring.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/SelectorWSAPoll.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorWSAPoll.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorWSAPoll~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorWSAPoll.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SelectorWSAPoll.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/ServerSocket.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/ServerSocket.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/ServerSocket~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/ServerSocket.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/ServerSocket.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/Socket.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Socket.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Socket~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Socket.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Socket.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/SocketChannel.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SocketChannel.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SocketChannel~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SocketChannel.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SocketChannel.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/SocketProtocols.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SocketProtocols.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SocketProtocols~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SocketProtocols.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/SocketProtocols.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/StructuredConcurrencyHelpers.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/StructuredConcurrencyHelpers.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/StructuredConcurrencyHelpers~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/StructuredConcurrencyHelpers.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/StructuredConcurrencyHelpers.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/System.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/System.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/System~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/System.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/System.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/Thread.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Thread.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Thread~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Thread.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Thread.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/ThreadPosix.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/ThreadPosix.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/ThreadPosix~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/ThreadPosix.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/ThreadPosix.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/ThreadWindows.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/ThreadWindows.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/ThreadWindows~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/ThreadWindows.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/ThreadWindows.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/Utilities.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Utilities.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Utilities~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Utilities.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Utilities.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/VsockAddress.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/VsockAddress.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/VsockAddress~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/VsockAddress.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/VsockAddress.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/VsockChannelEvents.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/VsockChannelEvents.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/VsockChannelEvents~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/VsockChannelEvents.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/VsockChannelEvents.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-nio/Sources/NIOPosix/Windows.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Windows.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Windows~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Windows.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/Windows.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/DerivedSources/resource_bundle_accessor.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/resource_bundle_accessor.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/resource_bundle_accessor~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/resource_bundle_accessor.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOPosix.build/resource_bundle_accessor.dia"
+  }
+}

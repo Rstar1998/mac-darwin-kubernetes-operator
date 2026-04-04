@@ -1,0 +1,37 @@
+{
+  "": {
+    "dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/HTTPTypesFoundation.d",
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/HTTPTypesFoundation.o",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/primary.swiftdeps"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-types/Sources/HTTPTypesFoundation/HTTPTypes+ISOLatin1.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/HTTPTypes+ISOLatin1.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/HTTPTypes+ISOLatin1~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/HTTPTypes+ISOLatin1.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/HTTPTypes+ISOLatin1.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-types/Sources/HTTPTypesFoundation/HTTPTypesFoundation.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/HTTPTypesFoundation.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/HTTPTypesFoundation~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/HTTPTypesFoundation.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/HTTPTypesFoundation.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-types/Sources/HTTPTypesFoundation/URLRequest+HTTPTypes.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/URLRequest+HTTPTypes.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/URLRequest+HTTPTypes~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/URLRequest+HTTPTypes.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/URLRequest+HTTPTypes.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-types/Sources/HTTPTypesFoundation/URLResponse+HTTPTypes.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/URLResponse+HTTPTypes.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/URLResponse+HTTPTypes~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/URLResponse+HTTPTypes.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/URLResponse+HTTPTypes.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-types/Sources/HTTPTypesFoundation/URLSession+HTTPTypes.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/URLSession+HTTPTypes.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/URLSession+HTTPTypes~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/URLSession+HTTPTypes.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HTTPTypesFoundation.build/URLSession+HTTPTypes.dia"
+  }
+}

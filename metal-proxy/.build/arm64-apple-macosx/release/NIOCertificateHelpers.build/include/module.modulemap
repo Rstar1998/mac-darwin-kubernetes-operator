@@ -1,0 +1,3 @@
+module NIOCertificateHelpers {
+    header "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOCertificateHelpers.build/include/NIOCertificateHelpers-Swift.h"
+}

@@ -1,0 +1,79 @@
+{
+  "": {
+    "dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/protoc_gen_grpc_swift.d",
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/protoc_gen_grpc_swift.o",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/primary.swiftdeps"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/grpc-swift/Sources/protoc-gen-grpc-swift/GenerateGRPC.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/GenerateGRPC.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/GenerateGRPC~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/GenerateGRPC.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/GenerateGRPC.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/grpc-swift/Sources/protoc-gen-grpc-swift/Generator-Client+AsyncAwait.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Client+AsyncAwait.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Client+AsyncAwait~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Client+AsyncAwait.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Client+AsyncAwait.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/grpc-swift/Sources/protoc-gen-grpc-swift/Generator-Client.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Client.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Client~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Client.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Client.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/grpc-swift/Sources/protoc-gen-grpc-swift/Generator-Metadata.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Metadata.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Metadata~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Metadata.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Metadata.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/grpc-swift/Sources/protoc-gen-grpc-swift/Generator-Names.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Names.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Names~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Names.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Names.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/grpc-swift/Sources/protoc-gen-grpc-swift/Generator-Server+AsyncAwait.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Server+AsyncAwait.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Server+AsyncAwait~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Server+AsyncAwait.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Server+AsyncAwait.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/grpc-swift/Sources/protoc-gen-grpc-swift/Generator-Server.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Server.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Server~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Server.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator-Server.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/grpc-swift/Sources/protoc-gen-grpc-swift/Generator.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Generator.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/grpc-swift/Sources/protoc-gen-grpc-swift/Options.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Options.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Options~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Options.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Options.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/grpc-swift/Sources/protoc-gen-grpc-swift/StreamingType.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/StreamingType.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/StreamingType~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/StreamingType.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/StreamingType.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/grpc-swift/Sources/protoc-gen-grpc-swift/Types.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Types.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Types~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Types.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Types.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/grpc-swift/Sources/protoc-gen-grpc-swift/Version.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Version.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Version~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Version.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/protoc_gen_grpc_swift.build/Version.dia"
+  }
+}

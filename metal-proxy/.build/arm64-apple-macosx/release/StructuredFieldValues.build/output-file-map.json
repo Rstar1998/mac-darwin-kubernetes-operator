@@ -1,0 +1,97 @@
+{
+  "": {
+    "dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldValues.d",
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldValues.o",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/primary.swiftdeps"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-structured-headers/Sources/StructuredFieldValues/Decoder/BareInnerListDecoder.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/BareInnerListDecoder.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/BareInnerListDecoder~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/BareInnerListDecoder.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/BareInnerListDecoder.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-structured-headers/Sources/StructuredFieldValues/Decoder/BareItemDecoder.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/BareItemDecoder.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/BareItemDecoder~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/BareItemDecoder.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/BareItemDecoder.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-structured-headers/Sources/StructuredFieldValues/Decoder/DictionaryKeyedContainer.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/DictionaryKeyedContainer.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/DictionaryKeyedContainer~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/DictionaryKeyedContainer.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/DictionaryKeyedContainer.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-structured-headers/Sources/StructuredFieldValues/Decoder/KeyedInnerListDecoder.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/KeyedInnerListDecoder.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/KeyedInnerListDecoder~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/KeyedInnerListDecoder.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/KeyedInnerListDecoder.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-structured-headers/Sources/StructuredFieldValues/Decoder/KeyedItemDecoder.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/KeyedItemDecoder.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/KeyedItemDecoder~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/KeyedItemDecoder.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/KeyedItemDecoder.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-structured-headers/Sources/StructuredFieldValues/Decoder/KeyedTopLevelListDecoder.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/KeyedTopLevelListDecoder.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/KeyedTopLevelListDecoder~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/KeyedTopLevelListDecoder.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/KeyedTopLevelListDecoder.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-structured-headers/Sources/StructuredFieldValues/Decoder/ParametersDecoder.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/ParametersDecoder.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/ParametersDecoder~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/ParametersDecoder.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/ParametersDecoder.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-structured-headers/Sources/StructuredFieldValues/Decoder/StructuredFieldValueDecoder.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldValueDecoder.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldValueDecoder~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldValueDecoder.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldValueDecoder.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-structured-headers/Sources/StructuredFieldValues/Decoder/StructuredHeaderCodingKey.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredHeaderCodingKey.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredHeaderCodingKey~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredHeaderCodingKey.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredHeaderCodingKey.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-structured-headers/Sources/StructuredFieldValues/Decoder/TopLevelListDecoder.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/TopLevelListDecoder.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/TopLevelListDecoder~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/TopLevelListDecoder.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/TopLevelListDecoder.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-structured-headers/Sources/StructuredFieldValues/DisplayString.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/DisplayString.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/DisplayString~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/DisplayString.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/DisplayString.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-structured-headers/Sources/StructuredFieldValues/Encoder/StructuredFieldKeyedEncodingContainer.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldKeyedEncodingContainer.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldKeyedEncodingContainer~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldKeyedEncodingContainer.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldKeyedEncodingContainer.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-structured-headers/Sources/StructuredFieldValues/Encoder/StructuredFieldUnkeyedEncodingContainer.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldUnkeyedEncodingContainer.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldUnkeyedEncodingContainer~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldUnkeyedEncodingContainer.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldUnkeyedEncodingContainer.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-structured-headers/Sources/StructuredFieldValues/Encoder/StructuredFieldValueEncoder.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldValueEncoder.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldValueEncoder~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldValueEncoder.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldValueEncoder.dia"
+  },
+  "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/swift-http-structured-headers/Sources/StructuredFieldValues/StructuredFieldValue.swift": {
+    "object": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldValue.swift.o",
+    "swiftmodule": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldValue~partial.swiftmodule",
+    "swift-dependencies": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldValue.swiftdeps",
+    "diagnostics": "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/StructuredFieldValues.build/StructuredFieldValue.dia"
+  }
+}

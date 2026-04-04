@@ -1,0 +1,146 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ .Values.namespace }}
+  labels:
+    app.kubernetes.io/managed-by: apple-gpu-operator
+    pod-security.kubernetes.io/enforce: privileged
+---
+# ─── ServiceAccounts ──────────────────────────────────────────────────────────
+{{- if .Values.serviceAccount.create }}
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: apple-gpu-operator
+  namespace: {{ .Values.namespace }}
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: metal-proxy
+  namespace: {{ .Values.namespace }}
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: metal-device-plugin
+  namespace: {{ .Values.namespace }}
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: metal-exporter
+  namespace: {{ .Values.namespace }}
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: metal-scheduler-extender
+  namespace: {{ .Values.namespace }}
+{{- end }}
+---
+# ─── ClusterRole: Operator ────────────────────────────────────────────────────
+{{- if .Values.rbac.create }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: apple-gpu-operator
+rules:
+  - apiGroups: ["gpu.apple.com"]
+    resources: ["applegpuclusters", "applegpuclusters/status", "metalworkloads", "metalworkloads/status"]
+    verbs: ["*"]
+  - apiGroups: ["apps"]
+    resources: ["daemonsets", "deployments"]
+    verbs: ["*"]
+  - apiGroups: [""]
+    resources: ["nodes", "pods", "namespaces", "serviceaccounts"]
+    verbs: ["get", "list", "watch", "update", "patch", "create"]
+  - apiGroups: ["rbac.authorization.k8s.io"]
+    resources: ["clusterroles", "clusterrolebindings"]
+    verbs: ["get", "list", "watch", "create", "update", "patch"]
+  - apiGroups: ["coordination.k8s.io"]
+    resources: ["leases"]
+    verbs: ["*"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: apple-gpu-operator
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: apple-gpu-operator
+subjects:
+  - kind: ServiceAccount
+    name: apple-gpu-operator
+    namespace: {{ .Values.namespace }}
+---
+# ─── ClusterRole: Device Plugin ───────────────────────────────────────────────
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: metal-device-plugin
+rules:
+  - apiGroups: [""]
+    resources: ["nodes"]
+    verbs: ["get", "list", "watch", "update", "patch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: metal-device-plugin
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: metal-device-plugin
+subjects:
+  - kind: ServiceAccount
+    name: metal-device-plugin
+    namespace: {{ .Values.namespace }}
+---
+# ─── ClusterRole: Exporter ────────────────────────────────────────────────────
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: metal-exporter
+rules:
+  - apiGroups: [""]
+    resources: ["nodes"]
+    verbs: ["get", "list", "watch", "update", "patch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: metal-exporter
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: metal-exporter
+subjects:
+  - kind: ServiceAccount
+    name: metal-exporter
+    namespace: {{ .Values.namespace }}
+---
+# ─── ClusterRole: Scheduler Extender ─────────────────────────────────────────
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: metal-scheduler-extender
+rules:
+  - apiGroups: [""]
+    resources: ["nodes", "pods"]
+    verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: metal-scheduler-extender
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: metal-scheduler-extender
+subjects:
+  - kind: ServiceAccount
+    name: metal-scheduler-extender
+    namespace: {{ .Values.namespace }}
+{{- end }}

@@ -1,0 +1,14 @@
+apiVersion: kubescheduler.config.k8s.io/v1
+kind: KubeSchedulerConfiguration
+clientConnection:
+  kubeconfig: /etc/kubernetes/scheduler.conf
+extenders:
+  - urlPrefix: "http://metal-scheduler-extender.apple-gpu-system.svc.cluster.local:8888"
+    filterVerb: filter
+    prioritizeVerb: prioritize
+    weight: 5
+    nodeCacheCapable: false
+    ignorable: true          # If extender is unavailable, fall back to default scheduling
+    managedResources:
+      - name: apple.com/gpu
+        ignoredByScheduler: false

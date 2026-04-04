@@ -1,0 +1,3 @@
+module _NIOBase64 {
+    header "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/_NIOBase64.build/include/_NIOBase64-Swift.h"
+}

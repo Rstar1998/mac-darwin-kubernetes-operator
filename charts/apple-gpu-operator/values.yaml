@@ -1,0 +1,108 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# Apple GPU Operator — Helm values
+# ──────────────────────────────────────────────────────────────────────────────
+
+# Namespace for all operator-managed resources.
+namespace: apple-gpu-system
+
+# ─── GPU partitioning ─────────────────────────────────────────────────────────
+# Number of physical GPU cores that map to one Kubernetes apple.com/gpu slot.
+# Example: Setting to 10 on an M3 Max (40 cores) yields 4 slots.
+# Setting to 0 (default) grants 1 slot representing the entire GPU device.
+coresPerSlot: 0
+
+# ─── Images ───────────────────────────────────────────────────────────────────
+image:
+  registry: ghcr.io
+  organization: gpu-operator-mac
+  tag: "0.1.0"
+  pullPolicy: IfNotPresent
+
+operator:
+  image: "ghcr.io/gpu-operator-mac/apple-gpu-operator:0.1.0"
+  replicas: 1
+  leaderElection: true
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+metalProxy:
+  image: "ghcr.io/gpu-operator-mac/metal-proxy:0.1.0"
+  # Maximum concurrent Metal command queues per node.
+  maxQueues: 4
+  resources:
+    requests:
+      cpu: 200m
+      memory: 256Mi
+
+devicePlugin:
+  image: "ghcr.io/gpu-operator-mac/metal-device-plugin:0.1.0"
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+
+exporter:
+  enabled: true
+  image: "ghcr.io/gpu-operator-mac/metal-exporter:0.1.0"
+  scrapeInterval: 15s
+  port: 9100
+  resources:
+    requests:
+      cpu: 100m
+      memory: 64Mi
+
+schedulerExtender:
+  enabled: true
+  image: "ghcr.io/gpu-operator-mac/metal-scheduler:0.1.0"
+  replicas: 2
+  port: 8888
+  resources:
+    requests:
+      cpu: 100m
+      memory: 64Mi
+
+# ─── Node targeting ───────────────────────────────────────────────────────────
+# DaemonSets are deployed only to nodes with these labels.
+# The device plugin will add apple.com/chip-family=m-series automatically.
+nodeSelector:
+  apple.com/chip-family: m-series
+
+# ─── Tolerations ──────────────────────────────────────────────────────────────
+tolerations:
+  - operator: Exists
+
+# ─── Monitoring ───────────────────────────────────────────────────────────────
+monitoring:
+  # Set to true if Prometheus Operator is installed (enables ServiceMonitor).
+  serviceMonitor:
+    enabled: false
+    interval: 30s
+    namespace: monitoring
+  # Set to true to install the pre-built Grafana dashboard ConfigMap.
+  grafanaDashboard:
+    enabled: false
+    namespace: monitoring
+
+# ─── cert-manager ─────────────────────────────────────────────────────────────
+# cert-manager is required for the admission webhook TLS certificate.
+cert-manager:
+  enabled: false  # set true to install cert-manager as a sub-chart
+
+webhook:
+  enabled: false  # set true once cert-manager is available
+  failurePolicy: Ignore
+
+# ─── RBAC ─────────────────────────────────────────────────────────────────────
+rbac:
+  create: true
+
+serviceAccount:
+  create: true
+
+# ─── Global image pull secrets ────────────────────────────────────────────────
+imagePullSecrets: []

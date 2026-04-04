@@ -1,0 +1,3 @@
+module NIOWebSocket {
+    header "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOWebSocket.build/include/NIOWebSocket-Swift.h"
+}

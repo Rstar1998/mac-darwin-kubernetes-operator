@@ -1,0 +1,3 @@
+module NIOHTTP2 {
+    header "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/NIOHTTP2.build/include/NIOHTTP2-Swift.h"
+}

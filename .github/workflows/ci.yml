@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  push:
+    branches: ["main", "dev"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  # ─── Go: lint + build + test ─────────────────────────────────────────────
+  go:
+    name: Go (lint / build / test)
+    runs-on: macos-14          # Apple Silicon runner (M1) — arm64
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+          cache: true
+
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v6
+        with:
+          version: v1.59
+          args: --timeout 5m
+
+      - name: Build
+        run: make build
+
+      - name: Test
+        run: go test ./... -v -count=1 -race -timeout 180s
+
+  # ─── Proto: regenerate stubs and check for diff ──────────────────────────
+  proto-check:
+    name: Proto (regeneration check)
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install protoc
+        run: brew install protobuf
+      - name: Install Go protoc plugins
+        run: |
+          go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+          go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+      - name: Regenerate stubs
+        run: make proto
+      - name: Check for drift
+        run: |
+          if ! git diff --quiet; then
+            echo "❌ Proto stubs are out of date — run 'make proto' and commit"; exit 1
+          fi
+
+  # ─── Helm lint ───────────────────────────────────────────────────────────
+  helm:
+    name: Helm lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-helm@v4
+        with:
+          version: "3.15.2"
+      - run: make helm-lint
+
+  # ─── Swift: build metal-proxy ────────────────────────────────────────────
+  swift:
+    name: Swift metal-proxy (build)
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build metal-proxy
+        run: make metal-proxy-build
+      - name: Test metal-proxy
+        run: make metal-proxy-test

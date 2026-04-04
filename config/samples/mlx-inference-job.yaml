@@ -1,0 +1,58 @@
+---
+# Sample MLX Inference Job
+# Requests 1 apple.com/gpu slot, gets metal-proxy socket injected.
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mlx-inference-demo
+  namespace: default
+spec:
+  template:
+    metadata:
+      labels:
+        app: mlx-inference-demo
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: mlx-inference
+          # Any image with the metal-runtime Python client installed
+          image: ghcr.io/gpu-operator-mac/metal-runtime:0.1.0
+          command: ["python3", "/app/inference.py"]
+          env:
+            # METAL_PROXY_SOCKET is injected automatically by the device plugin.
+            # These are additional user-supplied config.
+            - name: MODEL_PATH
+              value: "/models/mistral-7b-mlx"
+            - name: MAX_TOKENS
+              value: "512"
+          resources:
+            limits:
+              apple.com/gpu: "1"   # Request 1 logical GPU slot
+            requests:
+              cpu: 500m
+              memory: 4Gi
+          volumeMounts:
+            - name: models
+              mountPath: /models
+              readOnly: true
+      volumes:
+        - name: models
+          # Models stored on shared NFS between Mac Mini nodes.
+          nfs:
+            server: 192.168.1.100
+            path: /exports/ml-models
+
+---
+# Corresponding MetalWorkload hint (optional but recommended for production)
+apiVersion: gpu.apple.com/v1alpha1
+kind: MetalWorkload
+metadata:
+  name: mlx-inference-demo
+  namespace: default
+spec:
+  gpuSlots: 1
+  backend: mlx
+  priority: high
+  thermalThrottlePolicy: pause
+  podSelector:
+    app: mlx-inference-demo

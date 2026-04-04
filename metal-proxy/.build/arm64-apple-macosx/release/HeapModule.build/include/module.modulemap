@@ -1,0 +1,3 @@
+module HeapModule {
+    header "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/HeapModule.build/include/HeapModule-Swift.h"
+}

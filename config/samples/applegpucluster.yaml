@@ -1,0 +1,17 @@
+---
+# ─── Sample: AppleGPUCluster CR ──────────────────────────────────────────────
+# Apply this after installing the operator Helm chart to configure the cluster.
+apiVersion: gpu.apple.com/v1alpha1
+kind: AppleGPUCluster
+metadata:
+  name: mac-mini-cluster
+spec:
+  metalProxyImage: "ghcr.io/gpu-operator-mac/metal-proxy:0.1.0"
+  devicePluginImage: "ghcr.io/gpu-operator-mac/metal-device-plugin:0.1.0"
+  exporterImage: "ghcr.io/gpu-operator-mac/metal-exporter:0.1.0"
+  exporterEnabled: true
+  schedulerExtenderEnabled: true
+  schedulerExtenderImage: "ghcr.io/gpu-operator-mac/metal-scheduler:0.1.0"
+  nodeSelector:
+    apple.com/chip-family: m-series
+  imagePullPolicy: IfNotPresent

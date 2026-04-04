@@ -1,0 +1,172 @@
+syntax = "proto3";
+
+package metal;
+
+option go_package = "github.com/gpu-operator-mac/apple-gpu-operator/pkg/proto;metalpb";
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Metal Compute Proxy Service
+//
+// This is the gRPC contract between workload containers and the metal-proxy
+// host daemon running on each Mac Mini node.  Containers get the proxy socket
+// path injected by the device-plugin as METAL_PROXY_SOCKET env-var and a
+// bind-mount into /dev/metal/proxy.sock.
+//
+// Reference: NVIDIA container-toolkit uses a similar socket-injection pattern
+// for MPS (Multi-Process Service) on CUDA devices.
+// ─────────────────────────────────────────────────────────────────────────────
+
+service MetalComputeService {
+  // SubmitJob enqueues a GPU/ANE compute job.
+  rpc SubmitJob(JobRequest) returns (JobResponse);
+
+  // StreamJobStatus streams status updates until the job reaches a terminal state.
+  rpc StreamJobStatus(StatusRequest) returns (stream JobStatus);
+
+  // CancelJob attempts to cancel a queued or running job.
+  rpc CancelJob(CancelRequest) returns (CancelResponse);
+
+  // GetDeviceInfo returns static information about the Metal device on this node.
+  rpc GetDeviceInfo(Empty) returns (DeviceInfo);
+
+  // Health returns current health and utilization of the Metal proxy.
+  rpc Health(Empty) returns (HealthStatus);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Empty message (used as no-argument placeholder)
+// ─────────────────────────────────────────────────────────────────────────────
+message Empty {}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Job submission
+// ─────────────────────────────────────────────────────────────────────────────
+
+enum Backend {
+  BACKEND_UNSPECIFIED  = 0;
+  BACKEND_MLX          = 1;  // Apple MLX framework
+  BACKEND_PYTORCH_MPS  = 2;  // PyTorch Metal Performance Shaders backend
+  BACKEND_METAL_COMPUTE = 3; // Raw Metal Compute shaders (kernel path)
+}
+
+enum Priority {
+  PRIORITY_NORMAL = 0;
+  PRIORITY_HIGH   = 1;
+  PRIORITY_BATCH  = 2;  // lowest priority, best-effort
+}
+
+message JobRequest {
+  // Unique caller-assigned ID; used for idempotent re-submission.
+  string job_id = 1;
+
+  // Which compute backend to use.
+  Backend backend = 2;
+
+  // Scheduling priority.
+  Priority priority = 3;
+
+  // Serialised payload — interpretation depends on backend:
+  //   MLX: JSON-encoded model path + input tensor shapes
+  //   PYTORCH_MPS: serialised TorchScript model + inputs
+  //   METAL_COMPUTE: compiled .metallib bytes + kernel name + args
+  bytes payload = 4;
+
+  // Maximum wall-clock seconds before the proxy forcibly terminates the job.
+  uint32 timeout_seconds = 5;
+
+  // Caller-supplied metadata (e.g. pod name, namespace, trace-id).
+  map<string, string> labels = 6;
+}
+
+message JobResponse {
+  string job_id   = 1;
+  bool   accepted = 2;   // false if queue is full / job rejected
+  string reason   = 3;   // human-readable rejection reason
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Status streaming
+// ─────────────────────────────────────────────────────────────────────────────
+
+enum JobState {
+  STATE_QUEUED    = 0;
+  STATE_RUNNING   = 1;
+  STATE_SUCCEEDED = 2;
+  STATE_FAILED    = 3;
+  STATE_CANCELLED = 4;
+  STATE_THROTTLED = 5;  // paused due to thermal throttling
+}
+
+message StatusRequest {
+  string job_id = 1;
+}
+
+message JobStatus {
+  string   job_id          = 1;
+  JobState state           = 2;
+  uint32   queue_position  = 3;  // 0 when running
+  float    progress_pct    = 4;  // 0–100, hint only
+  bytes    result          = 5;  // set on SUCCEEDED; serialised output tensor(s)
+  string   error_message   = 6;  // set on FAILED
+  uint64   gpu_time_us     = 7;  // metal command-buffer GPU execution time
+  uint64   wall_time_us    = 8;  // total elapsed wall time
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Cancellation
+// ─────────────────────────────────────────────────────────────────────────────
+
+message CancelRequest {
+  string job_id = 1;
+}
+
+message CancelResponse {
+  bool   cancelled = 1;
+  string reason    = 2;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Device information
+// ─────────────────────────────────────────────────────────────────────────────
+
+message DeviceInfo {
+  // e.g. "Apple M3 Max"
+  string chip_name     = 1;
+  // e.g. "m3-max"
+  string chip_variant  = 2;
+  // GPU core count as reported by Metal (MTLDevice.maximumConcurrentCompilationTaskCount
+  // is not the right API; we use IOKit / system_profiler).
+  uint32 gpu_cores     = 3;
+  // Apple Neural Engine TOPS rating.
+  float  ane_tops      = 4;
+  // Unified memory shared between CPU and GPU, in bytes.
+  uint64 unified_memory_bytes = 5;
+  // Metal GPU family (e.g. "apple9").
+  string gpu_family    = 6;
+  // Supported backends on this node.
+  repeated Backend supported_backends = 7;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Health & utilization
+// ─────────────────────────────────────────────────────────────────────────────
+
+enum ThermalState {
+  THERMAL_NOMINAL  = 0;
+  THERMAL_FAIR     = 1;
+  THERMAL_SERIOUS  = 2;
+  THERMAL_CRITICAL = 3;
+}
+
+message HealthStatus {
+  bool          healthy             = 1;
+  ThermalState  thermal_state       = 2;
+  float         gpu_util_pct        = 3;   // 0–100
+  float         ane_util_pct        = 4;   // 0–100
+  float         gpu_power_watts     = 5;
+  uint32        jobs_queued         = 6;
+  uint32        jobs_running        = 7;
+  uint32        slots_total         = 8;
+  uint32        slots_allocated     = 9;
+  string        proxy_version       = 10;
+}

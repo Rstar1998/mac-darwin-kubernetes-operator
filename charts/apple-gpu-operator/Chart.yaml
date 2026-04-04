@@ -1,0 +1,25 @@
+apiVersion: v2
+name: apple-gpu-operator
+description: |
+  Apple GPU Operator — enables GPU-accelerated container workloads on
+  Kubernetes clusters of Mac Mini M-series nodes via the Metal Compute Proxy
+  architecture. Manages metal-proxy, metal-device-plugin, metal-exporter, and
+  metal-scheduler-extender as a unified operator.
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
+keywords:
+  - apple
+  - gpu
+  - metal
+  - mlx
+  - kubernetes
+  - operator
+home: https://github.com/gpu-operator-mac/apple-gpu-operator
+maintainers:
+  - name: Apple GPU Operator Authors
+dependencies:
+  - name: cert-manager
+    version: ">=1.14.0"
+    repository: https://charts.jetstack.io
+    condition: cert-manager.enabled

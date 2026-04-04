@@ -1,0 +1,100 @@
+---
+# ─── Operator Deployment ──────────────────────────────────────────────────────
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apple-gpu-operator
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: apple-gpu-operator
+spec:
+  replicas: {{ .Values.operator.replicas }}
+  selector:
+    matchLabels:
+      app: apple-gpu-operator
+  template:
+    metadata:
+      labels:
+        app: apple-gpu-operator
+    spec:
+      serviceAccountName: apple-gpu-operator
+      containers:
+        - name: operator
+          image: {{ .Values.operator.image }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args:
+            - --leader-elect={{ .Values.operator.leaderElection }}
+            - --metrics-bind-address=:8080
+            - --health-probe-bind-address=:8081
+          ports:
+            - name: metrics
+              containerPort: 8080
+            - name: health
+              containerPort: 8081
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: health
+            initialDelaySeconds: 15
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: health
+            initialDelaySeconds: 5
+          resources:
+            {{- toYaml .Values.operator.resources | nindent 12 }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+
+---
+# ─── Scheduler Extender Deployment ───────────────────────────────────────────
+{{- if .Values.schedulerExtender.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metal-scheduler-extender
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: metal-scheduler-extender
+spec:
+  replicas: {{ .Values.schedulerExtender.replicas }}
+  selector:
+    matchLabels:
+      app: metal-scheduler-extender
+  template:
+    metadata:
+      labels:
+        app: metal-scheduler-extender
+    spec:
+      serviceAccountName: metal-scheduler-extender
+      containers:
+        - name: extender
+          image: {{ .Values.schedulerExtender.image }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args:
+            - --listen-address=:{{ .Values.schedulerExtender.port }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.schedulerExtender.port }}
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+          resources:
+            {{- toYaml .Values.schedulerExtender.resources | nindent 12 }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: metal-scheduler-extender
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    app: metal-scheduler-extender
+  ports:
+    - name: http
+      port: {{ .Values.schedulerExtender.port }}
+      targetPort: http
+{{- end }}
