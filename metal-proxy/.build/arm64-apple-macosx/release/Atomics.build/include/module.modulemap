@@ -1,3 +1,0 @@
-module Atomics {
-    header "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/Atomics.build/include/Atomics-Swift.h"
-}

@@ -1,3 +1,0 @@
-module X509 {
-    header "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/arm64-apple-macosx/release/X509.build/include/X509-Swift.h"
-}

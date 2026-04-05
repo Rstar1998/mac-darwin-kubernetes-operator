@@ -1,4 +1,0 @@
-module CGRPCZlib {
-    umbrella header "/Users/rosscarvalho/Desktop/Anti-Gravity-Projects/gpu-operator-mac/metal-proxy/.build/checkouts/grpc-swift/Sources/CGRPCZlib/include/CGRPCZlib.h"
-    export *
-}
