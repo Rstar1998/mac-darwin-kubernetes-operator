@@ -55,7 +55,7 @@ func (r *AppleGPUClusterReconciler) Reconcile(ctx context.Context, req ctrl.Requ
 
 	// Fetch the AppleGPUCluster CR.
 	cluster := &gpuv1.AppleGPUCluster{}
-	if err := r.Get(ctx, req.NamespacedName, cluster); err != nil {
+	if err := r.Client.Get(ctx, req.NamespacedName, cluster); err != nil {
 		if errors.IsNotFound(err) {
 			return ctrl.Result{}, nil
 		}
@@ -70,7 +70,7 @@ func (r *AppleGPUClusterReconciler) Reconcile(ctx context.Context, req ctrl.Requ
 	// Add finalizer.
 	if !controllerutil.ContainsFinalizer(cluster, FinalizerName) {
 		controllerutil.AddFinalizer(cluster, FinalizerName)
-		if err := r.Update(ctx, cluster); err != nil {
+		if err := r.Client.Update(ctx, cluster); err != nil {
 			return ctrl.Result{}, err
 		}
 	}
@@ -396,9 +396,9 @@ func (r *AppleGPUClusterReconciler) nodeSelector(cluster *gpuv1.AppleGPUCluster)
 // ensureNamespace creates the operator namespace if it doesn't exist.
 func (r *AppleGPUClusterReconciler) ensureNamespace(ctx context.Context) error {
 	ns := &corev1.Namespace{}
-	err := r.Get(ctx, client.ObjectKey{Name: OperatorNamespace}, ns)
+	err := r.Client.Get(ctx, client.ObjectKey{Name: OperatorNamespace}, ns)
 	if errors.IsNotFound(err) {
-		return r.Create(ctx, &corev1.Namespace{
+		return r.Client.Create(ctx, &corev1.Namespace{
 			ObjectMeta: metav1.ObjectMeta{Name: OperatorNamespace},
 		})
 	}
@@ -411,7 +411,7 @@ func (r *AppleGPUClusterReconciler) updateStatus(
 	cluster *gpuv1.AppleGPUCluster,
 ) error {
 	nodeList := &corev1.NodeList{}
-	if err := r.List(ctx, nodeList, client.MatchingLabels{"apple.com/chip-family": "m-series"}); err != nil {
+	if err := r.Client.List(ctx, nodeList, client.MatchingLabels{"apple.com/chip-family": "m-series"}); err != nil {
 		return err
 	}
 
@@ -429,7 +429,7 @@ func (r *AppleGPUClusterReconciler) updateStatus(
 	}
 	patch.Status.ReadyNodes = readyCount
 
-	return r.Status().Update(ctx, patch)
+	return r.Client.Status().Update(ctx, patch)
 }
 
 // handleDeletion removes the finalizer once owned resources are cleaned up.
@@ -438,7 +438,7 @@ func (r *AppleGPUClusterReconciler) handleDeletion(
 	cluster *gpuv1.AppleGPUCluster,
 ) (ctrl.Result, error) {
 	controllerutil.RemoveFinalizer(cluster, FinalizerName)
-	return ctrl.Result{}, r.Update(ctx, cluster)
+	return ctrl.Result{}, r.Client.Update(ctx, cluster)
 }
 
 // SetupWithManager registers the reconciler with the controller-runtime Manager.

@@ -103,7 +103,7 @@ final actor MetalProxyServer {
             return false
         }
         buffer.commit()
-        await buffer.completed()
+        await buffer.waitUntilCompletedAsync()
         return buffer.status == .completed
     }
 
@@ -180,7 +180,7 @@ final actor MetalProxyServer {
         }
         buffer.label = "mlx-\(id)"
         buffer.commit()
-        await buffer.completed()
+        await buffer.waitUntilCompletedAsync()
 
         let gpuTime = UInt64((buffer.gpuEndTime - buffer.gpuStartTime) * 1_000_000_000)
         let wallTime = UInt64(Date().timeIntervalSince(startTime) * 1_000_000_000)
@@ -205,7 +205,7 @@ final actor MetalProxyServer {
         }
         buffer.label = "mps-\(id)"
         buffer.commit()
-        await buffer.completed()
+        await buffer.waitUntilCompletedAsync()
         return JobResult(jobID: id, output: Data(), gpuTimeNS: 0)
     }
 
@@ -243,7 +243,7 @@ final actor MetalProxyServer {
         encoder.setComputePipelineState(pipeline)
         encoder.endEncoding()
         buffer.commit()
-        await buffer.completed()
+        await buffer.waitUntilCompletedAsync()
 
         let gpuTime = UInt64((buffer.gpuEndTime - buffer.gpuStartTime) * 1_000_000_000)
         return JobResult(jobID: id, output: Data(), gpuTimeNS: gpuTime)
@@ -292,6 +292,18 @@ enum MetalProxyError: Error, CustomStringConvertible {
         case .invalidPayload:             return "Job payload is malformed"
         case .metalLibraryLoadFailed:     return "Failed to load .metallib"
         case .jobTimeout(let id):         return "Job \(id) timed out"
+        }
+    }
+}
+
+// MARK: - Extensions
+
+extension MTLCommandBuffer {
+    func waitUntilCompletedAsync() async {
+        await withCheckedContinuation { continuation in
+            self.addCompletedHandler { _ in
+                continuation.resume()
+            }
         }
     }
 }
