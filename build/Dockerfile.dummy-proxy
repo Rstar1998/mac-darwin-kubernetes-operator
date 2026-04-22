@@ -1,0 +1,4 @@
+FROM alpine:latest
+# Dummy proxy for testing K8s control plane on non-macOS nodes.
+# Just sleeps forever.
+ENTRYPOINT ["sleep", "infinity"]

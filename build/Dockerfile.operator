@@ -1,0 +1,7 @@
+# Pre-built binary Dockerfile — binary is compiled locally via `make build-linux`
+# and copied into a minimal distroless image.
+# This avoids Docker Hub Go image version mismatches with go.mod requirements.
+FROM gcr.io/distroless/static:nonroot
+COPY bin/linux-arm64/apple-gpu-operator /apple-gpu-operator
+USER 65532:65532
+ENTRYPOINT ["/apple-gpu-operator"]

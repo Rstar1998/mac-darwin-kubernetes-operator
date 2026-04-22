@@ -6,12 +6,12 @@ kind: AppleGPUCluster
 metadata:
   name: mac-mini-cluster
 spec:
-  metalProxyImage: "ghcr.io/gpu-operator-mac/metal-proxy:0.1.0"
-  devicePluginImage: "ghcr.io/gpu-operator-mac/metal-device-plugin:0.1.0"
-  exporterImage: "ghcr.io/gpu-operator-mac/metal-exporter:0.1.0"
+  metalProxyImage: "metal-proxy:local"
+  devicePluginImage: "metal-device-plugin:local"
+  exporterImage: "metal-exporter:local"
   exporterEnabled: true
   schedulerExtenderEnabled: true
-  schedulerExtenderImage: "ghcr.io/gpu-operator-mac/metal-scheduler:0.1.0"
+  schedulerExtenderImage: "metal-scheduler:local"
   nodeSelector:
     apple.com/chip-family: m-series
-  imagePullPolicy: IfNotPresent
+  imagePullPolicy: Never

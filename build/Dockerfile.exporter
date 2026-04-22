@@ -1,0 +1,4 @@
+FROM gcr.io/distroless/static:nonroot
+COPY bin/linux-arm64/metal-exporter /metal-exporter
+USER 65532:65532
+ENTRYPOINT ["/metal-exporter"]

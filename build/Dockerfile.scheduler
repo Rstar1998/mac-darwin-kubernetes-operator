@@ -1,0 +1,4 @@
+FROM gcr.io/distroless/static:nonroot
+COPY bin/linux-arm64/metal-scheduler /metal-scheduler
+USER 65532:65532
+ENTRYPOINT ["/metal-scheduler"]

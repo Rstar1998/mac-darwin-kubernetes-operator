@@ -18,8 +18,3 @@ keywords:
 home: https://github.com/gpu-operator-mac/apple-gpu-operator
 maintainers:
   - name: Apple GPU Operator Authors
-dependencies:
-  - name: cert-manager
-    version: ">=1.14.0"
-    repository: https://charts.jetstack.io
-    condition: cert-manager.enabled

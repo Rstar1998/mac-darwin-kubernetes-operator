@@ -1,0 +1,4 @@
+FROM gcr.io/distroless/static:nonroot
+COPY bin/linux-arm64/metal-device-plugin /metal-device-plugin
+USER 65532:65532
+ENTRYPOINT ["/metal-device-plugin"]
