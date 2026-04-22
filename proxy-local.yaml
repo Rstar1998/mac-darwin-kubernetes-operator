@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: metal-proxy
+  namespace: apple-gpu-system
+spec:
+  selector:
+    matchLabels:
+      app: metal-proxy
+  template:
+    metadata:
+      labels:
+        app: metal-proxy
+    spec:
+      serviceAccountName: metal-proxy
+      nodeSelector:
+        apple.com/chip-family: m-series
+      containers:
+        - name: metal-proxy
+          image: metal-proxy:local
+          imagePullPolicy: Never
+          volumeMounts:
+            - name: proxy-socket
+              mountPath: /var/run/metal-proxy
+      volumes:
+        - name: proxy-socket
+          hostPath:
+            path: /var/run/metal-proxy
+            type: DirectoryOrCreate

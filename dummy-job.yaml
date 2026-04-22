@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: gpu-test-job
+  namespace: default
+spec:
+  template:
+    metadata:
+      labels:
+        app: gpu-test-job
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: gpu-tester
+          image: alpine:latest
+          command: ["sh", "-c", "echo 'Testing GPU slot allocation' && ls -l /dev/metal/proxy.sock && env | grep METAL_ && sleep 30"]
+          resources:
+            limits:
+              apple.com/gpu: "1"

@@ -1,4 +1,4 @@
 FROM alpine:latest
-# Dummy proxy for testing K8s control plane on non-macOS nodes.
-# Just sleeps forever.
-ENTRYPOINT ["sleep", "infinity"]
+RUN apk add --no-cache socat
+# Create a dummy UNIX socket and listen indefinitely so net.Dial succeeds
+ENTRYPOINT ["/bin/sh", "-c", "mkdir -p /var/run/metal-proxy && rm -f /var/run/metal-proxy/metal.sock && socat UNIX-LISTEN:/var/run/metal-proxy/metal.sock,fork /dev/null"]
