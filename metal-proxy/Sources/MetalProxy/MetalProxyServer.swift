@@ -16,6 +16,7 @@ final actor MetalProxyServer {
     private var commandQueues: [MTLCommandQueue] = []
     private var activeJobs: [String: JobContext] = [:]
     private var jobQueue: AsyncStream<JobRequest>.Continuation?
+    private var queueIndex: Int = 0
 
     struct JobContext {
         let request: JobRequest
@@ -67,8 +68,25 @@ final actor MetalProxyServer {
                         "maxQueues": .string("\(maxQueues)"),
                         "unifiedMemoryGB": .string(
                             String(format: "%.1f", Double(mtlDevice.recommendedMaxWorkingSetSize) / 1e9)
-                        )
+                        ),
+                        "gpuFamily": .string(Self.detectGPUFamily(device: mtlDevice)),
+                        "supportsRaytracing": .string("\(mtlDevice.supportsRaytracing)")
                     ])
+    }
+
+    // detectGPUFamily determines the Metal GPU family for diagnostics and compatibility reporting.
+    // - apple7: M1 family (2020)
+    // - apple8: M2 family (2022)
+    // - apple9: M3 family (2023)
+    // Future M-series chips will add higher family numbers.
+    private static func detectGPUFamily(device: MTLDevice) -> String {
+        // Check from newest to oldest to report the highest supported family.
+        if #available(macOS 14.0, *) {
+            if device.supportsFamily(.apple9) { return "apple9 (M3+)" }
+        }
+        if device.supportsFamily(.apple8) { return "apple8 (M2)" }
+        if device.supportsFamily(.apple7) { return "apple7 (M1)" }
+        return "unknown"
     }
 
     // MARK: - Lifecycle
@@ -156,11 +174,13 @@ final actor MetalProxyServer {
         }
     }
 
-    // pickQueue finds the least-busy command queue.
+    // pickQueue selects the next command queue using round-robin distribution.
     private func pickQueue() throws -> MTLCommandQueue {
-        guard let queue = commandQueues.first else {
+        guard !commandQueues.isEmpty else {
             throw MetalProxyError.noQueuesAvailable
         }
+        let queue = commandQueues[queueIndex % commandQueues.count]
+        queueIndex += 1
         return queue
     }
 
@@ -272,7 +292,7 @@ final actor MetalProxyServer {
 
 // MARK: - Errors
 
-enum MetalProxyError: Error, CustomStringConvertible {
+enum MetalProxyError: Error, CustomStringConvertible, Sendable {
     case noMetalDevice
     case commandQueueCreationFailed
     case noQueuesAvailable

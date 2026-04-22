@@ -3,9 +3,13 @@
 package main
 
 import (
+	"context"
 	"flag"
 	"net/http"
 	"os"
+	"os/signal"
+	"syscall"
+	"time"
 
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
@@ -43,9 +47,34 @@ func main() {
 	mux := http.NewServeMux()
 	ext.RegisterHandlers(mux)
 
-	log.Info("Listening", "addr", listenAddr)
-	if err := http.ListenAndServe(listenAddr, mux); err != nil {
-		log.Error(err, "server error")
-		os.Exit(1)
+	srv := &http.Server{
+		Addr:              listenAddr,
+		Handler:           mux,
+		ReadHeaderTimeout: 10 * time.Second,
+		WriteTimeout:      30 * time.Second,
+		IdleTimeout:       60 * time.Second,
 	}
+
+	// Start server in background.
+	go func() {
+		log.Info("Listening", "addr", listenAddr)
+		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+			log.Error(err, "server error")
+			os.Exit(1)
+		}
+	}()
+
+	// Graceful shutdown on SIGTERM/SIGINT.
+	sigCh := make(chan os.Signal, 1)
+	signal.Notify(sigCh, syscall.SIGTERM, syscall.SIGINT)
+	sig := <-sigCh
+	log.Info("Received shutdown signal", "signal", sig)
+
+	shutdownCtx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
+	defer cancel()
+
+	if err := srv.Shutdown(shutdownCtx); err != nil {
+		log.Error(err, "HTTP server shutdown error")
+	}
+	log.Info("Scheduler extender stopped gracefully")
 }

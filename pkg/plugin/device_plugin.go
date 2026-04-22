@@ -16,12 +16,14 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"regexp"
 	"strconv"
 	"strings"
 	"time"
 
 	"github.com/go-logr/logr"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	k8stypes "k8s.io/apimachinery/pkg/types"
 	"k8s.io/client-go/kubernetes"
 	pluginapi "k8s.io/kubelet/pkg/apis/deviceplugin/v1beta1"
 	"google.golang.org/grpc"
@@ -93,10 +95,41 @@ type AppleGPUInfo struct {
 	UnifiedMemoryBytes int64
 }
 
+// coreCountRegex extracts numeric core count from strings like "30", "30 cores", "40-core".
+var coreCountRegex = regexp.MustCompile(`(\d+)`)
+
+// parseCoreCount robustly extracts the numeric core count from system_profiler output.
+// Handles: "30", "30 cores", "40-core", " 30 ", or other macOS version variations.
+func parseCoreCount(raw string) int {
+	raw = strings.TrimSpace(raw)
+	if raw == "" {
+		return 0
+	}
+
+	// Direct parse (most common case).
+	if n, err := strconv.Atoi(raw); err == nil {
+		return n
+	}
+
+	// Extract first numeric sequence from the string.
+	matches := coreCountRegex.FindStringSubmatch(raw)
+	if len(matches) >= 2 {
+		if n, err := strconv.Atoi(matches[1]); err == nil {
+			return n
+		}
+	}
+
+	return 0
+}
+
 // DiscoverGPU uses system_profiler to detect the Apple Silicon GPU.
-// Falls back to sensible defaults if running in a test environment.
+// Compatible with M1 through latest M-series chips on macOS 14+.
 func DiscoverGPU() (*AppleGPUInfo, error) {
-	out, err := exec.Command(
+	// Use a timeout to prevent hanging if system_profiler is unresponsive.
+	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
+	defer cancel()
+
+	out, err := exec.CommandContext(ctx,
 		"system_profiler", "SPDisplaysDataType", "-json",
 	).Output()
 	if err != nil {
@@ -113,7 +146,7 @@ func DiscoverGPU() (*AppleGPUInfo, error) {
 			continue
 		}
 
-		cores, _ := strconv.Atoi(strings.TrimSpace(d.CoreCount))
+		cores := parseCoreCount(d.CoreCount)
 		info := &AppleGPUInfo{
 			ChipModel:   d.ChipModel,
 			ChipVariant: normaliseChipVariant(d.ChipModel),
@@ -313,23 +346,28 @@ func (p *MetalDevicePlugin) GetPreferredAllocation(
 
 // LabelNode sets apple.com/* labels on the node to make NFD-style hardware
 // facts available to schedulers and node affinity rules.
+// Uses JSON merge-patch to avoid clobbering labels from other controllers.
 func (p *MetalDevicePlugin) LabelNode(ctx context.Context) error {
-	node, err := p.k8sClient.CoreV1().Nodes().Get(ctx, p.nodeName, metav1.GetOptions{})
+	patchData := map[string]interface{}{
+		"metadata": map[string]interface{}{
+			"labels": map[string]string{
+				"apple.com/chip-variant":   p.gpuInfo.ChipVariant,
+				"apple.com/gpu-core-count": strconv.Itoa(p.gpuInfo.GPUCores),
+				"apple.com/chip-family":    "m-series",
+				"apple.com/gpu-family":     p.gpuInfo.GPUFamily,
+				"apple.com/gpu-slots":      strconv.Itoa(p.TotalSlots()),
+			},
+		},
+	}
+
+	patchBytes, err := json.Marshal(patchData)
 	if err != nil {
-		return fmt.Errorf("get node: %w", err)
+		return fmt.Errorf("marshal label patch: %w", err)
 	}
 
-	patch := node.DeepCopy()
-	if patch.Labels == nil {
-		patch.Labels = make(map[string]string)
-	}
-	patch.Labels["apple.com/chip-variant"]  = p.gpuInfo.ChipVariant
-	patch.Labels["apple.com/gpu-core-count"] = strconv.Itoa(p.gpuInfo.GPUCores)
-	patch.Labels["apple.com/chip-family"]   = "m-series"
-	patch.Labels["apple.com/gpu-family"]    = p.gpuInfo.GPUFamily
-	patch.Labels["apple.com/gpu-slots"]     = strconv.Itoa(p.TotalSlots())
-
-	_, err = p.k8sClient.CoreV1().Nodes().Update(ctx, patch, metav1.UpdateOptions{})
+	_, err = p.k8sClient.CoreV1().Nodes().Patch(
+		ctx, p.nodeName, k8stypes.MergePatchType, patchBytes, metav1.PatchOptions{},
+	)
 	return err
 }
 

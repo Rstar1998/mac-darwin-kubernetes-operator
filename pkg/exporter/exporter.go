@@ -16,8 +16,8 @@ import (
 
 	"github.com/go-logr/logr"
 	"github.com/prometheus/client_golang/prometheus"
-	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	k8stypes "k8s.io/apimachinery/pkg/types"
 	"k8s.io/client-go/kubernetes"
 )
 
@@ -203,13 +203,15 @@ func (e *Exporter) scrape(ctx context.Context) error {
 		return fmt.Errorf("parse powermetrics JSON: %w", err)
 	}
 
+	// Capture values under lock for thread safety.
 	e.mu.Lock()
 	e.lastSample = &pm
+	utilPct := (1.0 - pm.GPU.IdleRatio) * 100.0
+	thermalPressure := pm.ThermalPressure
 	e.mu.Unlock()
 
 	labels := prometheus.Labels{"node": e.nodeName, "chip_variant": e.chipVariant}
 
-	utilPct := (1.0 - pm.GPU.IdleRatio) * 100.0
 	gpuUtilizationGauge.With(labels).Set(utilPct)
 	gpuPowerGauge.With(labels).Set(pm.Processor.GPU.PowerMW / 1000.0)
 	aneUtilGauge.With(labels).Set(pm.Processor.ANE.PowerMW)
@@ -217,7 +219,8 @@ func (e *Exporter) scrape(ctx context.Context) error {
 	cpuTempGauge.With(labels).Set(pm.Processor.Temperature)
 
 	// Update node thermal annotation so scheduler extender can read it.
-	if err := e.annotateNode(ctx, pm.ThermalPressure); err != nil {
+	// Use captured values (not lastSample reference) to avoid race.
+	if err := e.annotateNode(ctx, thermalPressure, utilPct); err != nil {
 		e.log.Error(err, "failed to annotate node thermal state")
 	}
 
@@ -232,23 +235,26 @@ func (e *Exporter) UpdateSlotMetrics(total, allocated int) {
 	gpuSlotsAllocatedGauge.With(labels).Set(float64(allocated))
 }
 
-// annotateNode patches the apple.com/thermal-state annotation on this node.
-func (e *Exporter) annotateNode(ctx context.Context, thermalState string) error {
-	node, err := e.k8sClient.CoreV1().Nodes().Get(ctx, e.nodeName, metav1.GetOptions{})
+// annotateNode patches the apple.com/thermal-state and gpu-util-pct annotations
+// on this node using a strategic merge patch to avoid clobbering annotations set
+// by other controllers (NFD, etc.).
+func (e *Exporter) annotateNode(ctx context.Context, thermalState string, utilPct float64) error {
+	patch := map[string]interface{}{
+		"metadata": map[string]interface{}{
+			"annotations": map[string]string{
+				"apple.com/thermal-state": thermalState,
+				"apple.com/gpu-util-pct":  strconv.FormatFloat(utilPct, 'f', 1, 64),
+			},
+		},
+	}
+
+	patchBytes, err := json.Marshal(patch)
 	if err != nil {
-		return err
+		return fmt.Errorf("marshal annotation patch: %w", err)
 	}
-	patched := node.DeepCopy()
-	if patched.Annotations == nil {
-		patched.Annotations = make(map[string]string)
-	}
-	patched.Annotations["apple.com/thermal-state"] = thermalState
-	patched.Annotations["apple.com/gpu-util-pct"] = strconv.FormatFloat(
-		(1.0-e.lastSample.GPU.IdleRatio)*100.0, 'f', 1, 64,
+
+	_, err = e.k8sClient.CoreV1().Nodes().Patch(
+		ctx, e.nodeName, k8stypes.MergePatchType, patchBytes, metav1.PatchOptions{},
 	)
-	_, err = e.k8sClient.CoreV1().Nodes().Update(ctx, patched, metav1.UpdateOptions{})
 	return err
 }
-
-// Silence unused imports.
-var _ = corev1.NodeSpec{}

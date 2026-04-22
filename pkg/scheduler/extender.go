@@ -81,6 +81,7 @@ func (e *Extender) handleFilter(w http.ResponseWriter, r *http.Request) {
 		Nodes:       &corev1.NodeList{Items: eligible},
 		FailedNodes: failed,
 	}
+	w.Header().Set("Content-Type", "application/json")
 	if err := json.NewEncoder(w).Encode(result); err != nil {
 		e.log.Error(err, "encode filter response")
 	}
@@ -143,6 +144,7 @@ func (e *Extender) handlePrioritize(w http.ResponseWriter, r *http.Request) {
 	// Sort descending for logging (k8s doesn't require sorted output).
 	sort.Slice(scores, func(i, j int) bool { return scores[i].Score > scores[j].Score })
 
+	w.Header().Set("Content-Type", "application/json")
 	if err := json.NewEncoder(w).Encode(scores); err != nil {
 		e.log.Error(err, "encode prioritize response")
 	}
@@ -203,6 +205,3 @@ func (e *Extender) scoreNode(node *corev1.Node) int64 {
 	return int64(weighted)
 }
 
-// Silence unused imports.
-var _ = corev1.NodeSpec{}
-var _ = metav1.ListOptions{}

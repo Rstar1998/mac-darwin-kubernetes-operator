@@ -12,6 +12,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"os/exec"
+	"path/filepath"
+	"strconv"
 
 	"github.com/gpu-operator-mac/apple-gpu-operator/pkg/plugin"
 )
@@ -92,35 +95,51 @@ func main() {
 
 // bindMount performs a bind-mount of src into the container's mount namespace.
 func bindMount(containerPid int, src, dst string) error {
-	// Ensure destination directory exists inside the container namespace.
-	// We use nsenter to run mkdir inside the container mount namespace.
+	// Validate PID to prevent injection via crafted OCI state.
+	if containerPid <= 0 {
+		return fmt.Errorf("invalid container PID: %d", containerPid)
+	}
+	pidStr := strconv.Itoa(containerPid)
+
+	// Validate that the container's mount namespace exists.
+	nsMntPath := filepath.Join("/proc", pidStr, "ns", "mnt")
+	if _, err := os.Stat(nsMntPath); err != nil {
+		return fmt.Errorf("mount namespace not found at %s: %w", nsMntPath, err)
+	}
+
 	nsenterBase := []string{
-		"nsenter", "--mount=/proc/" + fmt.Sprintf("%d", containerPid) + "/ns/mnt", "--",
+		"--mount=" + nsMntPath, "--",
 	}
 
 	// Create parent directory inside container.
-	mkdirArgs := append(nsenterBase, "mkdir", "-p", "/dev/metal")
-	if err := runCmd(mkdirArgs[0], mkdirArgs[1:]...); err != nil {
+	mkdirArgs := append(nsenterBase, "mkdir", "-p", filepath.Dir(dst))
+	if err := runCmd("nsenter", mkdirArgs...); err != nil {
 		// Non-fatal: directory may already exist.
 		fmt.Fprintf(os.Stderr, "[metal-hook] mkdir warning: %v\n", err)
 	}
 
-	// Bind mount the socket file. We use nsenter + mount.
+	// Create the destination file for the bind-mount (sockets need a file, not a directory).
+	touchArgs := append(nsenterBase, "touch", dst)
+	if err := runCmd("nsenter", touchArgs...); err != nil {
+		fmt.Fprintf(os.Stderr, "[metal-hook] touch warning: %v\n", err)
+	}
+
+	// Bind mount the socket file.
 	mountArgs := append(nsenterBase, "mount", "--bind", src, dst)
-	return runCmd(mountArgs[0], mountArgs[1:]...)
+	return runCmd("nsenter", mountArgs...)
 }
 
-// runCmd execs a command and returns any error.
+// runCmd executes a command and returns any error.
 func runCmd(name string, args ...string) error {
-	// Simple implementation using os/exec semantics (inline to avoid import cycle).
-	// The real implementation uses exec.Command from os/exec.
 	fmt.Fprintf(os.Stderr, "[metal-hook] exec: %s %v\n", name, args)
-	// For production: use exec.Command(name, args...).Run()
-	// Kept minimal here to avoid pulling in extra packages at hook binary compile time.
-	return nil
+	cmd := exec.Command(name, args...)
+	cmd.Stderr = os.Stderr
+	cmd.Stdout = os.Stderr
+	return cmd.Run()
 }
 
 func fatalf(format string, args ...any) {
 	fmt.Fprintf(os.Stderr, "[metal-hook] FATAL: "+format+"\n", args...)
 	os.Exit(1)
 }
+

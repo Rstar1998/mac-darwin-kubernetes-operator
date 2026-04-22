@@ -8,6 +8,7 @@ package controller
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 
 	appsv1 "k8s.io/api/apps/v1"
@@ -16,6 +17,7 @@ import (
 	"k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
+	k8stypes "k8s.io/apimachinery/pkg/types"
 	"k8s.io/apimachinery/pkg/util/intstr"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
@@ -119,6 +121,7 @@ func (r *AppleGPUClusterReconciler) reconcileMetalProxy(
 ) error {
 	hostPathSocket := corev1.HostPathDirectoryOrCreate
 	privileged := true
+	maxUnavailable := intstr.FromInt(1)
 
 	ds := &appsv1.DaemonSet{
 		ObjectMeta: metav1.ObjectMeta{
@@ -129,6 +132,12 @@ func (r *AppleGPUClusterReconciler) reconcileMetalProxy(
 
 	_, err := controllerutil.CreateOrUpdate(ctx, r.Client, ds, func() error {
 		ds.Spec = appsv1.DaemonSetSpec{
+			UpdateStrategy: appsv1.DaemonSetUpdateStrategy{
+				Type: appsv1.RollingUpdateDaemonSetStrategyType,
+				RollingUpdate: &appsv1.RollingUpdateDaemonSet{
+					MaxUnavailable: &maxUnavailable,
+				},
+			},
 			Selector: &metav1.LabelSelector{
 				MatchLabels: map[string]string{"app": "metal-proxy"},
 			},
@@ -142,6 +151,7 @@ func (r *AppleGPUClusterReconciler) reconcileMetalProxy(
 				Spec: corev1.PodSpec{
 					HostNetwork:        true,
 					HostPID:            true,
+					PriorityClassName:  "system-node-critical",
 					ServiceAccountName: "metal-proxy",
 					NodeSelector:       r.nodeSelector(cluster),
 					Tolerations: []corev1.Toleration{
@@ -171,11 +181,17 @@ func (r *AppleGPUClusterReconciler) reconcileMetalProxy(
 							},
 							InitialDelaySeconds: 15,
 							PeriodSeconds:       30,
+							TimeoutSeconds:      5,
+							FailureThreshold:    3,
 						},
 						Resources: corev1.ResourceRequirements{
 							Requests: corev1.ResourceList{
 								corev1.ResourceCPU:    resource.MustParse("100m"),
 								corev1.ResourceMemory: resource.MustParse("128Mi"),
+							},
+							Limits: corev1.ResourceList{
+								corev1.ResourceCPU:    resource.MustParse("2"),
+								corev1.ResourceMemory: resource.MustParse("2Gi"),
 							},
 						},
 					}},
@@ -203,6 +219,7 @@ func (r *AppleGPUClusterReconciler) reconcileDevicePlugin(
 ) error {
 	hostPathDir := corev1.HostPathDirectory
 	hostPathSocket := corev1.HostPathDirectoryOrCreate
+	maxUnavailable := intstr.FromInt(1)
 
 	ds := &appsv1.DaemonSet{
 		ObjectMeta: metav1.ObjectMeta{
@@ -213,6 +230,12 @@ func (r *AppleGPUClusterReconciler) reconcileDevicePlugin(
 
 	_, err := controllerutil.CreateOrUpdate(ctx, r.Client, ds, func() error {
 		ds.Spec = appsv1.DaemonSetSpec{
+			UpdateStrategy: appsv1.DaemonSetUpdateStrategy{
+				Type: appsv1.RollingUpdateDaemonSetStrategyType,
+				RollingUpdate: &appsv1.RollingUpdateDaemonSet{
+					MaxUnavailable: &maxUnavailable,
+				},
+			},
 			Selector: &metav1.LabelSelector{
 				MatchLabels: map[string]string{"app": "metal-device-plugin"},
 			},
@@ -221,6 +244,7 @@ func (r *AppleGPUClusterReconciler) reconcileDevicePlugin(
 					Labels: map[string]string{"app": "metal-device-plugin"},
 				},
 				Spec: corev1.PodSpec{
+					PriorityClassName:  "system-node-critical",
 					ServiceAccountName: "metal-device-plugin",
 					NodeSelector:       r.nodeSelector(cluster),
 					Containers: []corev1.Container{{
@@ -242,6 +266,16 @@ func (r *AppleGPUClusterReconciler) reconcileDevicePlugin(
 						VolumeMounts: []corev1.VolumeMount{
 							{Name: "device-plugin", MountPath: "/var/lib/kubelet/device-plugins"},
 							{Name: "proxy-socket", MountPath: "/var/run/metal-proxy"},
+						},
+						Resources: corev1.ResourceRequirements{
+							Requests: corev1.ResourceList{
+								corev1.ResourceCPU:    resource.MustParse("50m"),
+								corev1.ResourceMemory: resource.MustParse("64Mi"),
+							},
+							Limits: corev1.ResourceList{
+								corev1.ResourceCPU:    resource.MustParse("200m"),
+								corev1.ResourceMemory: resource.MustParse("256Mi"),
+							},
 						},
 					}},
 					Volumes: []corev1.Volume{
@@ -281,6 +315,7 @@ func (r *AppleGPUClusterReconciler) reconcileExporter(
 		return nil
 	}
 	privileged := true
+	maxUnavailable := intstr.FromInt(1)
 
 	ds := &appsv1.DaemonSet{
 		ObjectMeta: metav1.ObjectMeta{
@@ -291,6 +326,12 @@ func (r *AppleGPUClusterReconciler) reconcileExporter(
 
 	_, err := controllerutil.CreateOrUpdate(ctx, r.Client, ds, func() error {
 		ds.Spec = appsv1.DaemonSetSpec{
+			UpdateStrategy: appsv1.DaemonSetUpdateStrategy{
+				Type: appsv1.RollingUpdateDaemonSetStrategyType,
+				RollingUpdate: &appsv1.RollingUpdateDaemonSet{
+					MaxUnavailable: &maxUnavailable,
+				},
+			},
 			Selector: &metav1.LabelSelector{
 				MatchLabels: map[string]string{"app": "metal-exporter"},
 			},
@@ -327,6 +368,16 @@ func (r *AppleGPUClusterReconciler) reconcileExporter(
 									Path: "/metrics",
 									Port: intstr.FromInt(9100),
 								},
+							},
+						},
+						Resources: corev1.ResourceRequirements{
+							Requests: corev1.ResourceList{
+								corev1.ResourceCPU:    resource.MustParse("100m"),
+								corev1.ResourceMemory: resource.MustParse("64Mi"),
+							},
+							Limits: corev1.ResourceList{
+								corev1.ResourceCPU:    resource.MustParse("500m"),
+								corev1.ResourceMemory: resource.MustParse("256Mi"),
 							},
 						},
 					}},
@@ -406,6 +457,7 @@ func (r *AppleGPUClusterReconciler) ensureNamespace(ctx context.Context) error {
 }
 
 // updateStatus patches the AppleGPUCluster status with node counts.
+// Uses a JSON merge-patch on the status subresource to avoid conflicts.
 func (r *AppleGPUClusterReconciler) updateStatus(
 	ctx context.Context,
 	cluster *gpuv1.AppleGPUCluster,
@@ -415,10 +467,6 @@ func (r *AppleGPUClusterReconciler) updateStatus(
 		return err
 	}
 
-	patch := cluster.DeepCopy()
-	patch.Status.TotalNodes = int32(len(nodeList.Items))
-	patch.Status.ObservedGeneration = cluster.Generation
-
 	readyCount := int32(0)
 	for _, node := range nodeList.Items {
 		for _, cond := range node.Status.Conditions {
@@ -427,9 +475,21 @@ func (r *AppleGPUClusterReconciler) updateStatus(
 			}
 		}
 	}
-	patch.Status.ReadyNodes = readyCount
 
-	return r.Client.Status().Update(ctx, patch)
+	statusData := map[string]interface{}{
+		"status": map[string]interface{}{
+			"totalNodes":         int32(len(nodeList.Items)),
+			"readyNodes":         readyCount,
+			"observedGeneration": cluster.Generation,
+		},
+	}
+
+	patchBytes, err := json.Marshal(statusData)
+	if err != nil {
+		return fmt.Errorf("marshal status patch: %w", err)
+	}
+
+	return r.Client.Status().Patch(ctx, cluster, client.RawPatch(k8stypes.MergePatchType, patchBytes))
 }
 
 // handleDeletion removes the finalizer once owned resources are cleaned up.

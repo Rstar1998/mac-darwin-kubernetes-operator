@@ -8,6 +8,7 @@ import (
 	"flag"
 	"os"
 	"os/signal"
+	"strconv"
 	"syscall"
 
 	ctrl "sigs.k8s.io/controller-runtime"
@@ -30,15 +31,19 @@ func main() {
 	ctrl.SetLogger(zap.New(zap.UseFlagOptions(&opts)))
 
 	log := ctrl.Log.WithName("device-plugin")
-	log.Info("Starting metal-device-plugin", "version", version.Version, "coresPerSlot", coresPerSlot)
 
 	// Override coresPerSlot from env (set by the operator DaemonSet).
+	// Env var takes precedence over the --cores-per-slot flag.
 	if envVal := os.Getenv("CORES_PER_SLOT"); envVal != "" {
-		if v := 0; true {
-			_ = v
-			// parsed in plugin.DefaultCoresPerSlot via flag default
+		parsed, err := strconv.Atoi(envVal)
+		if err != nil {
+			log.Error(err, "invalid CORES_PER_SLOT env var, using flag value", "envVal", envVal)
+		} else {
+			coresPerSlot = parsed
 		}
 	}
+
+	log.Info("Starting metal-device-plugin", "version", version.Version, "coresPerSlot", coresPerSlot)
 
 	// Discover GPU.
 	gpuInfo, err := plugin.DiscoverGPU()

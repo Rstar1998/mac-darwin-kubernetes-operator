@@ -84,7 +84,13 @@ func main() {
 		w.WriteHeader(http.StatusOK)
 	})
 
-	srv := &http.Server{Addr: listenAddr, Handler: mux}
+	srv := &http.Server{
+		Addr:              listenAddr,
+		Handler:           mux,
+		ReadHeaderTimeout: 10 * time.Second,
+		WriteTimeout:      30 * time.Second,
+		IdleTimeout:       60 * time.Second,
+	}
 	go func() {
 		log.Info("Serving metrics", "addr", listenAddr)
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
@@ -94,6 +100,17 @@ func main() {
 
 	sigCh := make(chan os.Signal, 1)
 	signal.Notify(sigCh, syscall.SIGTERM, syscall.SIGINT)
-	<-sigCh
-	log.Info("Shutting down exporter")
+	sig := <-sigCh
+	log.Info("Shutting down exporter", "signal", sig)
+
+	// Graceful shutdown: drain in-flight metric scrapes.
+	shutdownCtx, shutdownCancel := context.WithTimeout(context.Background(), 15*time.Second)
+	defer shutdownCancel()
+
+	cancel() // stop the powermetrics scrape loop
+
+	if err := srv.Shutdown(shutdownCtx); err != nil {
+		log.Error(err, "HTTP server shutdown error")
+	}
+	log.Info("Exporter stopped gracefully")
 }

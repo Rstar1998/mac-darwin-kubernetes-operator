@@ -10,7 +10,11 @@ jobs:
   # ─── Go: lint + build + test ─────────────────────────────────────────────
   go:
     name: Go (lint / build / test)
-    runs-on: macos-14          # Apple Silicon runner (M1) — arm64
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [macos-14, macos-15]   # M1 (macos-14) + M2+ (macos-15) hardware
     steps:
       - uses: actions/checkout@v4
 
@@ -23,7 +27,7 @@ jobs:
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v6
         with:
-          version: latest
+          version: v2.1.6
           args: --timeout 5m
 
       - name: Build
@@ -70,8 +74,12 @@ jobs:
 
   # ─── Swift: build metal-proxy ────────────────────────────────────────────
   swift:
-    name: Swift metal-proxy (build)
-    runs-on: macos-14
+    name: Swift metal-proxy (${{ matrix.runner }})
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [macos-14, macos-15]   # M1 (macos-14) + M2+ (macos-15) hardware
     steps:
       - uses: actions/checkout@v4
       - name: Build metal-proxy

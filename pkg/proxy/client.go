@@ -5,7 +5,9 @@ package proxy
 
 import (
 	"context"
+	"errors"
 	"fmt"
+	"net"
 	"os"
 	"time"
 
@@ -123,24 +125,42 @@ type DeviceInfo struct {
 	GPUFamily          string
 }
 
+// ErrNotImplemented is returned when a method requires generated proto stubs
+// that have not been compiled into this binary yet.
+var ErrNotImplemented = errors.New("method requires generated proto stubs (run 'make proto')")
+
 // GetDeviceInfo returns information about the Metal GPU on the current node.
-// Useful for workloads that want to adapt to the available hardware.
+// NOTE: This method requires generated proto stubs. Until stubs are generated
+// (via `make proto`), it returns ErrNotImplemented.
 func (c *Client) GetDeviceInfo(ctx context.Context) (*DeviceInfo, error) {
-	// NOTE: When proto stubs are generated (make proto), this will call
-	// the generated MetalComputeServiceClient.GetDeviceInfo method.
-	// For now we return a placeholder to allow compilation without generated stubs.
-	return &DeviceInfo{
-		ChipName:    os.Getenv("METAL_CHIP_VARIANT"),
-		ChipVariant: os.Getenv("METAL_CHIP_VARIANT"),
-	}, nil
+	// TODO: When proto stubs are generated, replace with:
+	//   client := metalpb.NewMetalComputeServiceClient(c.conn)
+	//   resp, err := client.GetDeviceInfo(ctx, &metalpb.Empty{})
+	return nil, fmt.Errorf("GetDeviceInfo: %w", ErrNotImplemented)
 }
 
-// Health returns true if the metal-proxy is healthy and accepting jobs.
+// Health returns true if the metal-proxy is healthy and accepting connections.
+// Performs an actual TCP-level connectivity check on the underlying connection.
 func (c *Client) Health(ctx context.Context) (bool, error) {
-	// Implemented fully once proto stubs are generated.
-	// For pre-generation: attempt a ping via the raw conn state.
+	// Check if the gRPC connection is in a valid state.
 	state := c.conn.GetState()
-	return state.String() != "SHUTDOWN", nil
+	switch state.String() {
+	case "SHUTDOWN", "TRANSIENT_FAILURE":
+		return false, nil
+	}
+
+	// Try to verify at the transport level by getting the socket path
+	// and doing a quick dial.
+	socket := os.Getenv(DefaultSocketEnv)
+	if socket != "" {
+		conn, err := net.DialTimeout("unix", socket, 2*time.Second)
+		if err != nil {
+			return false, nil
+		}
+		_ = conn.Close()
+	}
+
+	return true, nil
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
